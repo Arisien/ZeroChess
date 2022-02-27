@@ -3,26 +3,20 @@
 
 #include <string>
 
-class Game;
-
 class Piece {
-    public:
+    private:
+        uint id;
         std::string name;
-        char symbol;
-        int value;
-        int id;
-        Piece(std::string n, char s, int v, int i);
-        ~Piece();
-        virtual bool isMove(Game* game, int a, int b, int c, int d);
-};
+    public:
+        Piece (std::string n, uint i);
 
-class King: public Piece {
-  public:
-    King(int i): Piece(n, s, v, i) {
-        name = "King";
-        symbol = 'K';
-        value = 200;
-    }
+        virtual ~Piece ();
+
+        uint getId();
+        
+        std::string getName();
+
+        virtual bool logic();
 };
 
 #endif

@@ -4,7 +4,7 @@ LDFLAGS = -g
 SRC = ${wildcard src/*.c}
 HDR = ${wildcard include/*c}
 OBJ = ${SRC:.c=.o}
-EXEC = yue
+EXEC = zero
 
 all: ${SRC} ${OBJ} ${EXEC}
 
@@ -16,7 +16,7 @@ ${EXEC}: ${OBJ}
 
 install:
 	make
-	cp ./yue /usr/local/bin/yue
+	cp ./zero /usr/local/bin/zero
 
 clean:
 	rm src/*.o ${EXEC}

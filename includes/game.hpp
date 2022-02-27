@@ -2,17 +2,33 @@
 #define ZERO_GAME_HPP
 
 #include <vector>
-#include <map>
 
-class Piece;
+#include "position.hpp"
+#include "piece.hpp"
+#include "board.hpp"
 
 class Game {
+    private:
+        std::vector<Piece*> pieces;
+        Board* board;
+        Pos kings[2];
+        bool turn;
     public:
-        std::vector<std::vector<int>> board;
-        std::map<int, Piece*> pieces;
-        Game();
-        ~Game();
+        Game(int width, int height);
+        
+        virtual ~Game();
+        
         void addPiece (Piece* piece);
+        
+        Piece* getPiece (uint id);
+
+        Board* getBoard ();
+
+        Pos getKing (bool color);
+        
+        bool isTurn ();
+        
+        bool move (Pos p1, Pos p2);
 };
 
 #endif
