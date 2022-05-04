@@ -8,11 +8,11 @@ Board::Board(int h, int w) {
 
 Board::~Board() {}
         
-uint Board::getHeight() {
+uint8_t Board::getHeight() {
     return height;
 }
         
-uint Board::getWidth() {
+uint8_t Board::getWidth() {
     return width;
 }
         

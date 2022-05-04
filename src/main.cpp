@@ -1,7 +1,8 @@
 #include <iostream>
 
-#include "../includes/piece.hpp"
-#include "../includes/game.hpp"
+#include "piece.cpp"
+#include "board.cpp"
+#include "game.cpp"
 
 int main (int argc, char *argv[]) {
     std::cout << "Hello, World!" << std::endl;

@@ -22,7 +22,7 @@ void Game::addPiece (Piece* piece) {
     pieces.push_back(piece);
 }
         
-Piece* Game::getPiece (uint id) {
+Piece* Game::getPiece (uint8_t id) {
     for (auto p = pieces.begin(); p != pieces.end(); ++p) {
         if ((*p)->getId() == id) return *p;
     }
@@ -45,14 +45,14 @@ bool Game::move (Pos p1, Pos p2) {
 
     // Selected tile must have your piece.
 
-    uint origin = board->getTile(p1.x, p1.y);
+    uint8_t origin = board->getTile(p1.x, p1.y);
     bool o_color = (origin / abs(origin) + 1) / 2;
 
     if (origin == 0 || o_color != turn) return false; 
 
     // Target tile cannot have your piece.
 
-    uint target = board->getTile(p2.x, p2.y);
+    uint8_t target = board->getTile(p2.x, p2.y);
     bool t_color = (target / abs(target) + 1) / 2;
 
     if (t_color == turn) return false;

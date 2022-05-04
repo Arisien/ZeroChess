@@ -7,15 +7,15 @@
 class Board {
     private:
         std::vector<int> tiles;
-        uint height, width;
+        uint8_t height, width;
     public:
         Board(int h, int w);
 
         virtual ~Board();
         
-        uint getHeight();
+        uint8_t getHeight();
         
-        uint getWidth();
+        uint8_t getWidth();
         
         int getTile(int x, int y);
 

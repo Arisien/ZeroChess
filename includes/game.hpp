@@ -20,7 +20,7 @@ class Game {
         
         void addPiece (Piece* piece);
         
-        Piece* getPiece (uint id);
+        Piece* getPiece (uint8_t id);
 
         Board* getBoard ();
 
