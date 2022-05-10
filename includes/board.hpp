@@ -4,22 +4,28 @@
 #include <vector>
 #include <string>
 
+#include "vectors.hpp"
+
 class Board {
     private:
         std::vector<int> tiles;
-        uint8_t height, width;
+        int height, width;
     public:
         Board(int h, int w);
 
         virtual ~Board();
         
-        uint8_t getHeight();
+        int getHeight();
         
-        uint8_t getWidth();
+        int getWidth();
         
-        int getTile(int x, int y);
+        int getTile(Vec2D<int> pos);
 
-        void setTile (int x, int y, int tile);
+        void setTile (Vec2D<int> pos, int value);
+
+        Vec2D<void*> getInfo (Vec2D<int> pos) {
+            
+        }
 };
 
 #endif

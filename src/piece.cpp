@@ -1,13 +1,13 @@
 #include "../includes/piece.hpp"
 
-Piece::Piece (std::string n, uint8_t i) {
-    name = n;
-    id = i;
+Piece::Piece (std::string name, int id) {
+    this->name = name;
+    this->id = id;
 }
 
 Piece::~Piece () {}
 
-uint8_t Piece::getId () {
+int Piece::getId () {
     return id;
 }
         
@@ -18,7 +18,3 @@ std::string Piece::getName () {
 bool Piece::logic () {
     return false;
 }
-
-// class King: public Piece {
-
-// };

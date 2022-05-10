@@ -8,18 +8,18 @@ Board::Board(int h, int w) {
 
 Board::~Board() {}
         
-uint8_t Board::getHeight() {
+int Board::getHeight() {
     return height;
 }
         
-uint8_t Board::getWidth() {
+int Board::getWidth() {
     return width;
 }
-        
-int Board::getTile(int x, int y) {
-    return tiles[x + y*width];
+
+int Board::getTile(Vec2D<int> pos) {
+    return tiles[pos.x + pos.y*width];
 }
 
-void Board::setTile (int x, int y, int tile) {
-    tiles[x + y*width] = tile;
+void Board::setTile (Vec2D<int> pos, int value) {
+    tiles[pos.x + pos.y*width] = value;
 }

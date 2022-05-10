@@ -5,14 +5,14 @@
 
 class Piece {
     private:
-        uint8_t id;
+        int id;
         std::string name;
     public:
-        Piece (std::string n, uint8_t i);
+        Piece (std::string name, int id);
 
         virtual ~Piece ();
 
-        uint8_t getId();
+        int getId();
         
         std::string getName();
 

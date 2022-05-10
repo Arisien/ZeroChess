@@ -3,15 +3,15 @@
 
 #include <vector>
 
-#include "position.hpp"
 #include "piece.hpp"
 #include "board.hpp"
+#include "vectors.hpp"
 
 class Game {
     private:
         std::vector<Piece*> pieces;
         Board* board;
-        Pos kings[2];
+        Vec2D<int> kings[2];
         bool turn;
     public:
         Game(int width, int height);
@@ -20,15 +20,15 @@ class Game {
         
         void addPiece (Piece* piece);
         
-        Piece* getPiece (uint8_t id);
+        Piece* getPiece (int id);
 
         Board* getBoard ();
 
-        Pos getKing (bool color);
+        Vec2D<int> getKing (bool color);
         
         bool isTurn ();
         
-        bool move (Pos p1, Pos p2);
+        bool move (Vec2D<int> p1, Vec2D<int> p2);
 };
 
 #endif

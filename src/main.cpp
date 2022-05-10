@@ -1,5 +1,6 @@
 #include <iostream>
 
+#include "vectors.cpp"
 #include "piece.cpp"
 #include "board.cpp"
 #include "game.cpp"
