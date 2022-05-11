@@ -22,10 +22,6 @@ class Board {
         int getTile(Vec2D<int> pos);
 
         void setTile (Vec2D<int> pos, int value);
-
-        Vec2D<void*> getInfo (Vec2D<int> pos) {
-            
-        }
 };
 
 #endif

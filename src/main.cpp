@@ -3,6 +3,7 @@
 #include "vectors.cpp"
 #include "piece.cpp"
 #include "board.cpp"
+#include "move.cpp"
 #include "game.cpp"
 
 int main (int argc, char *argv[]) {

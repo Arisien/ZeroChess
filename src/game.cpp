@@ -41,26 +41,27 @@ bool Game::isTurn () {
     return turn;
 }
         
-bool Game::move (Vec2D<int> p1, Vec2D<int> p2) {
+bool Game::move (Move move) {
 
-    // Selected tile must have your piece.
+    // Select Origin and Target Piece
+    int origin = board->getTile(move.origin);
+    int target = board->getTile(move.target);
 
-    uint8_t origin = board->getTile(p1);
+    // Get Target and Origin Colors
     bool o_color = (origin / abs(origin) + 1) / 2;
-
-    if (origin == 0 || o_color != turn) return false; 
-
-    // Target tile cannot have your piece.
-
-    uint8_t target = board->getTile(p2);
     bool t_color = (target / abs(target) + 1) / 2;
 
+    // Empty piece or not your piece
+    if (origin == 0 || o_color != this->turn) return false; 
+
+    // Target tile cannot have your piece.
     if (t_color == turn) return false;
 
-    // Check if piece can make this move.
-
+    // Check if specific piece can make this move.
     if (getPiece(origin)->logic()) {
         turn = !turn;
         return true;
     }
+
+    return false;
 }

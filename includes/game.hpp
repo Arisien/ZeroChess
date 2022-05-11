@@ -6,6 +6,7 @@
 #include "piece.hpp"
 #include "board.hpp"
 #include "vectors.hpp"
+#include "move.hpp"
 
 class Game {
     private:
@@ -28,7 +29,7 @@ class Game {
         
         bool isTurn ();
         
-        bool move (Vec2D<int> p1, Vec2D<int> p2);
+        bool move (Move move);
 };
 
 #endif

@@ -13,9 +13,4 @@ Vec2D<T>::Vec2D(T x, T y) {
 }
 
 template <typename T>
-Vec2D<T>::~Vec2D() {
-    if (std::is_pointer<T>::value) {
-        free((void*)x);
-        free((void*)y);
-    }
-}
+Vec2D<T>::~Vec2D() {}
